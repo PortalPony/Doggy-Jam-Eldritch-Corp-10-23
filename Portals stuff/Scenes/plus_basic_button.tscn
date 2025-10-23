@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://3t76fvji31go"]
+
+[ext_resource type="Texture2D" uid="uid://chkxuf1ekyg8g" path="res://Portals stuff/PNG/Flesh Blob.png" id="1_ajwao"]
+[ext_resource type="Script" uid="uid://bh8fgqy1uv6eq" path="res://Portals stuff/Scenes/plus_basic_button.gd" id="1_ybmex"]
+[ext_resource type="Texture2D" uid="uid://c6ef41le0ojvn" path="res://Portals stuff/PNG/IM Tiles/grey brick.png" id="2_r8wkn"]
+[ext_resource type="Script" uid="uid://dit7f5mggoavw" path="res://Portals stuff/Hard code/add_unit.gd" id="4_idhts"]
+
+[node name="plus basic Button" type="Node2D"]
+position = Vector2(231, 208)
+script = ExtResource("1_ybmex")
+
+[node name="GreyBrick" type="Sprite2D" parent="."]
+position = Vector2(-3, -21)
+texture = ExtResource("2_r8wkn")
+
+[node name="fleashyBit" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="FleshBlob" type="Sprite2D" parent="fleashyBit"]
+z_index = 2
+position = Vector2(0.5, -20.5)
+scale = Vector2(0.06773722, 0.059009153)
+texture = ExtResource("1_ajwao")
+
+[node name="button" type="Button" parent="fleashyBit"]
+z_index = 4
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -44.0
+offset_right = 1574.7994
+offset_bottom = 1797.3071
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.027590683, 0.024035571)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+flat = true
+icon_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 3
+position = Vector2(9, 15)
+script = ExtResource("4_idhts")
+
+[node name="add unit" type="Button" parent="Node2D"]
+offset_left = -93.0
+offset_top = -80.0
+offset_right = -29.0
+offset_bottom = -49.0
+text = "+1 Unit"
+
+[node name="minus unit" type="Button" parent="Node2D"]
+offset_left = -95.0
+offset_top = -12.0
+offset_right = -25.0
+offset_bottom = 19.0
+text = "-1 Unit"
+
+[node name="Units Label" type="Label" parent="Node2D"]
+offset_left = -18.0
+offset_top = -92.0
+offset_right = 22.0
+offset_bottom = -69.0
+text = "99"
+
+[connection signal="pressed" from="fleashyBit/button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/add unit" to="Node2D" method="_on_add_unit_pressed"]
+[connection signal="pressed" from="Node2D/minus unit" to="Node2D" method="_on_minus_unit_pressed"]

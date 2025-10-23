@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dru1ygt3posr3"]
+
+[ext_resource type="Script" uid="uid://cl47p2medpjwy" path="res://Portals stuff/PNG/IM Tiles/Block System/cause/step_on_me.gd" id="1_i0j6q"]
+[ext_resource type="Texture2D" path="res://main/battery.png" id="2_xv4lq"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eu6d"]
+size = Vector2(67, 21.999998)
+
+[node name="Step on me" type="Area2D"]
+script = ExtResource("1_i0j6q")
+oneshot = true
+
+[node name="GoodButton" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_xv4lq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_0eu6d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

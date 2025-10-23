@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://3t76fvji31go"]
+
+[ext_resource type="Texture2D" uid="uid://chkxuf1ekyg8g" path="res://Flesh Blob.png" id="1_ajwao"]
+[ext_resource type="PackedScene" uid="uid://cdpg442i7j0u6" path="res://tell_parent_var.tscn" id="1_xkwav"]
+[ext_resource type="Script" uid="uid://bh8fgqy1uv6eq" path="res://plus_basic_button.gd" id="1_ybmex"]
+
+[node name="plus basic Button" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Tell parent Var" parent="." instance=ExtResource("1_xkwav")]
+layout_mode = 0
+offset_top = 46.0
+offset_bottom = 69.0
+
+[node name="button" type="Button" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -52.0
+offset_right = 712.0
+offset_bottom = 1236.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.040731937, 0.040731937)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "66"
+icon = ExtResource("1_ajwao")
+flat = true
+icon_alignment = 1
+script = ExtResource("1_ybmex")
+
+[connection signal="pressed" from="button" to="button" method="_on_pressed"]

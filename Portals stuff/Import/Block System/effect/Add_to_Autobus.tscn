@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fqfao71jbfpq"]
+
+[ext_resource type="Script" uid="uid://cjjb75yuyk8h6" path="res://Portals stuff/PNG/IM Tiles/Block System/effect/add_to_autobus.gd" id="1_s8b0l"]
+
+[node name="AddToAutobus" type="Node2D"]
+script = ExtResource("1_s8b0l")

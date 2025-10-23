@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg6ocfwyj2du8"]
+
+[ext_resource type="Script" uid="uid://cxhskspeua5fh" path="res://Portals stuff/PNG/IM Tiles/Block System/cause/press_me.gd" id="1_271t8"]
+
+
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vll1"]
+radius = 44.407207
+
+[node name="Press Me" type="Area2D"]
+script = ExtResource("1_271t8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5vll1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

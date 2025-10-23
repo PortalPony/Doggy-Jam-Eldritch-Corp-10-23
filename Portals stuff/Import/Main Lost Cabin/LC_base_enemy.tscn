@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cl6iw8n4tfbxs"]
+
+[ext_resource type="Script" uid="uid://r847fxl7vw2" path="res://Portals stuff/Import/Main Lost Cabin/LC_base_enemy.gd" id="1_qotbn"]
+[ext_resource type="Texture2D" uid="uid://1w0d7w3t7rht" path="res://Portals stuff/PNG/png/body Part 1 -1.png" id="3_6sra1"]
+[ext_resource type="Script" path="res://zzzMISC/evolution.gd" id="4_s40bl"]
+[ext_resource type="Script" path="res://zzzMISC/attack_area.gd" id="5_gkou6"]
+[ext_resource type="Script" path="res://zzzMISC/stats.gd" id="6_prw6i"]
+[ext_resource type="Texture2D" uid="uid://b6imr2brfxbwo" path="res://Portals stuff/PNG/png/red dot bad.png" id="7_bll4k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yo2aj"]
+radius = 55.0091
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pcbxe"]
+radius = 37.054
+
+[node name="LC Base Enemy" type="CharacterBody2D" groups=["bad"]]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_qotbn")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="BodyPart1-1" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_6sra1")
+
+[node name="Evolution" type="Node2D" parent="."]
+script = ExtResource("4_s40bl")
+
+[node name="Attack Area" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("5_gkou6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
+shape = SubResource("CircleShape2D_yo2aj")
+
+[node name="Timer" type="Timer" parent="Attack Area"]
+
+[node name="Stats" type="Label" parent="."]
+offset_left = -42.0
+offset_top = -74.0
+offset_right = -41.0
+offset_bottom = -51.0
+script = ExtResource("6_prw6i")
+
+[node name="RedDotBad" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_bll4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pcbxe")
+
+[connection signal="area_entered" from="Attack Area" to="Attack Area" method="_on_area_entered"]
+[connection signal="body_entered" from="Attack Area" to="Attack Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Attack Area" to="Attack Area" method="_on_body_exited"]
+[connection signal="timeout" from="Attack Area/Timer" to="Attack Area" method="_on_timer_timeout"]

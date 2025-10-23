@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqvapuwla6ivx"]
+
+[ext_resource type="Script" uid="uid://c8f1abwjiwaan" path="res://Portals stuff/PNG/IM Tiles/Block System/Spawners/instance Timer.gd" id="1_i5plp"]
+
+
+[node name="instance Timer" type="Node2D"]
+script = ExtResource("1_i5plp")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

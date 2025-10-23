@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctyps5ve8xqqv"]
+
+[ext_resource type="Script" uid="uid://d1chc330ugy07" path="res://Portals stuff/Scenes/ecconomy.gd" id="1_f2quc"]
+
+[node name="Ecconomy" type="Node2D"]
+script = ExtResource("1_f2quc")

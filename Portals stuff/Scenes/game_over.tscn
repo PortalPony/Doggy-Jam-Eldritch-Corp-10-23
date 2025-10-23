@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0okff40bufqy"]
+
+[ext_resource type="Script" uid="uid://cx00jksmddxov" path="res://Portals stuff/Scenes/game_over.gd" id="1_y26ei"]
+
+[node name="Game Over" type="Node2D"]
+script = ExtResource("1_y26ei")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 351.0
+offset_top = 193.0
+offset_right = 391.0
+offset_bottom = 216.0
+text = "game over"
+
+[node name="Return button" type="Button" parent="."]
+offset_left = 531.0
+offset_top = 314.0
+offset_right = 662.0
+offset_bottom = 345.0
+text = "Return to Game"
+
+[node name="Start with 2 units" type="Button" parent="."]
+offset_left = 189.0
+offset_top = 317.0
+offset_right = 330.0
+offset_bottom = 348.0
+text = "Start with 2 units
+"
+
+[node name="Button2" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="Return button" to="." method="_on_return_button_button_down"]
+[connection signal="button_down" from="Start with 2 units" to="." method="_on_start_with_2_units_button_down"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs0qq26rg7ghk"]
+
+[ext_resource type="Script" uid="uid://17ylfxgklobs" path="res://Portals stuff/PNG/IM Tiles/Block System/Spawners/instance.gd" id="1_nbqse"]
+
+[node name="instance" type="Node2D"]
+script = ExtResource("1_nbqse")

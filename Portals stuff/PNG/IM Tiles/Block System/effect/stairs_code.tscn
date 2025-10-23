@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cydscis7fx1xf"]
+
+[ext_resource type="PackedScene" uid="uid://dru1ygt3posr3" path="res://Portals stuff/PNG/IM Tiles/Block System/cause/step_on_me.tscn" id="1_0h5au"]
+[ext_resource type="PackedScene" uid="uid://dux4vm1i2o0cp" path="res://Portals stuff/PNG/IM Tiles/Block System/effect/send_to_scene.tscn" id="1_ymke7"]
+[ext_resource type="Texture2D" path="res://main/PNG/IM Erin's art/stairs.png" id="2_ymke7"]
+
+[node name="stairs code" type="Node2D"]
+z_index = -1
+
+[node name="send to scene" parent="." instance=ExtResource("1_ymke7")]
+position = Vector2(126.42349, 114.72461)
+
+[node name="Step on me" parent="send to scene" instance=ExtResource("1_0h5au")]
+position = Vector2(-84.42349, -100.72461)
+scale = Vector2(0.8448703, 0.83293444)
+
+[node name="GoodButton" parent="send to scene/Step on me" index="0"]
+texture = ExtResource("2_ymke7")
+
+[node name="CollisionShape2D" parent="send to scene/Step on me" index="1"]
+position = Vector2(71, 5)
+
+[editable path="send to scene/Step on me"]

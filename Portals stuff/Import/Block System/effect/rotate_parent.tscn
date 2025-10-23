@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://caqonjw3bm8f4"]
+
+[ext_resource type="Script" uid="uid://b13oypaheem2t" path="res://Portals stuff/PNG/IM Tiles/Block System/effect/rotate_parent.gd" id="1_knj2t"]
+
+
+
+[node name="Rotate Parent" type="Node2D"]
+script = ExtResource("1_knj2t")

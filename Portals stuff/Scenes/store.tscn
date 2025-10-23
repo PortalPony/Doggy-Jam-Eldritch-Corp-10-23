@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb5b78x7kjaae"]
+
+[ext_resource type="Script" uid="uid://c80h0t1ydn2qg" path="res://Portals stuff/Scenes/store.gd" id="1_c176v"]
+
+[node name="Store" type="CanvasLayer"]
+script = ExtResource("1_c176v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Money" type="Label" parent="."]
+unique_name_in_owner = true
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 25.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 45.0
+offset_right = -787.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="No money" type="Label" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = 567.0
+offset_right = 144.0
+offset_bottom = 616.0
+text = "Not Enough Money
+"

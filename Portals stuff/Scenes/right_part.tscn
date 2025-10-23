@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbfbetiyfggct"]
+
+[ext_resource type="Script" uid="uid://bryjyhj7gtlxl" path="res://Portals stuff/Scenes/right_part.gd" id="1_l1u1j"]
+[ext_resource type="Texture2D" uid="uid://bos4boyuaqtr8" path="res://icon.svg" id="2_83ctg"]
+[ext_resource type="Script" uid="uid://bdjxba5scnmmp" path="res://Portals stuff/Scenes/tell_var_2.gd" id="3_yy3t4"]
+
+[node name="Right Part" type="CanvasLayer"]
+script = ExtResource("1_l1u1j")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1145.3892, 645.0536)
+rotation = -3.1415927
+scale = Vector2(3.2708328, 5.0237927)
+texture = ExtResource("2_83ctg")
+offset = Vector2(63.926636, 64.340385)
+
+[node name="TellVar" type="ProgressBar" parent="."]
+offset_left = 824.0
+offset_top = 310.5
+offset_right = 1073.0
+offset_bottom = 337.5
+scale = Vector2(0.88439906, 1.2272588)
+size_flags_horizontal = 6
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TellVar"]
+layout_mode = 0
+offset_left = 93.84906
+offset_top = 28.11142
+offset_right = 133.84906
+offset_bottom = 51.11142
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -433.0
+offset_top = -322.5
+offset_bottom = 322.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="TellVar2" type="ProgressBar" parent="."]
+offset_left = 824.0
+offset_top = 259.0
+offset_right = 1073.0
+offset_bottom = 286.0
+scale = Vector2(0.88439906, 1.2272588)
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = ExtResource("3_yy3t4")
+
+[node name="Label" type="Label" parent="TellVar2"]
+layout_mode = 0
+offset_left = 93.84906
+offset_top = 28.11142
+offset_right = 133.84906
+offset_bottom = 51.11142

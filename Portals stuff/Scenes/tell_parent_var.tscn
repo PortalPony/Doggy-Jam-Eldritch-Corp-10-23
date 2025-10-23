@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdpg442i7j0u6"]
+
+[ext_resource type="Script" uid="uid://c6wu3e6fp0ed4" path="res://Portals stuff/Scenes/tell_parent_var.gd" id="1_bue8s"]
+
+[node name="Tell parent Var" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_bue8s")

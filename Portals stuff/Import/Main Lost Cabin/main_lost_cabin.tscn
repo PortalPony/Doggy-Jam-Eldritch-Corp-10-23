@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfjncwo3kpgvh"]
+
+[ext_resource type="Texture2D" uid="uid://bos4boyuaqtr8" path="res://icon.svg" id="1_br1oq"]
+[ext_resource type="PackedScene" uid="uid://df75fiop06k7i" path="res://Portals stuff/Import/Main Lost Cabin/wall.tscn" id="3_b24tr"]
+[ext_resource type="PackedScene" uid="uid://n8cuvewwtsia" path="res://Portals stuff/Import/Main Lost Cabin/full_human_player.tscn" id="3_siuc7"]
+[ext_resource type="PackedScene" uid="uid://cl6iw8n4tfbxs" path="res://Portals stuff/Import/Main Lost Cabin/LC_base_enemy.tscn" id="4_b24tr"]
+[ext_resource type="PackedScene" path="res://Mech Main/instance Timer MECH.tscn" id="5_qfmq7"]
+
+[node name="Main Lost Cabin" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(6.99219, 5.51563)
+texture = ExtResource("1_br1oq")
+
+[node name="Wall5" parent="." instance=ExtResource("3_b24tr")]
+position = Vector2(-8.999996, -1.999999)
+scale = Vector2(8.863242, 3.1814802)
+
+[node name="Wall" parent="." instance=ExtResource("3_b24tr")]
+position = Vector2(-388, -8)
+scale = Vector2(1.12008, 3.37019)
+
+[node name="Wall2" parent="." instance=ExtResource("3_b24tr")]
+position = Vector2(372, -8)
+scale = Vector2(1.12008, 3.37019)
+
+[node name="Wall3" parent="." instance=ExtResource("3_b24tr")]
+position = Vector2(-8, 281)
+rotation = -1.57079
+scale = Vector2(1.12008, 3.37019)
+
+[node name="Wall4" parent="." instance=ExtResource("3_b24tr")]
+position = Vector2(-17, -296)
+rotation = -1.57079
+scale = Vector2(1.12008, 3.37019)
+
+[node name="Player" parent="." instance=ExtResource("3_siuc7")]
+unique_name_in_owner = true
+position = Vector2(7, -24)
+
+[node name="LC Base Enemy" parent="." instance=ExtResource("4_b24tr")]
+position = Vector2(175, 458)
+
+[node name="instance Timer MECH" parent="." instance=ExtResource("5_qfmq7")]
+position = Vector2(-746, -17)

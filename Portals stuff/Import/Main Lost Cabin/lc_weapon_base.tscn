@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bga78dp2g2cj0"]
+
+[ext_resource type="Script" uid="uid://bk4egem32oqan" path="res://Portals stuff/Import/Main Lost Cabin/LC_Gun_Base.gd" id="1_q024d"]
+
+[node name="LC Weapon Base" type="Node2D"]
+script = ExtResource("1_q024d")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

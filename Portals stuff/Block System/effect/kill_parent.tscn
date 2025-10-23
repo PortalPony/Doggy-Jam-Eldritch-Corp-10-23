@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck08oafd3n0t6"]
+
+[ext_resource type="Script" uid="uid://dak705kxh0hwr" path="res://Portals stuff/PNG/IM Tiles/Block System/effect/kill_parent.gd" id="1_h5em2"]
+
+[node name="kill Parent" type="Node2D"]
+script = ExtResource("1_h5em2")
