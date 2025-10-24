@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gj7wcq0bua83"]
+
+[ext_resource type="Script" uid="uid://006yurf4xks5" path="res://Portals stuff/Scenes/testtextbox.gd" id="1_uus08"]
+
+[node name="Testtextbox" type="Node2D"]
+script = ExtResource("1_uus08")

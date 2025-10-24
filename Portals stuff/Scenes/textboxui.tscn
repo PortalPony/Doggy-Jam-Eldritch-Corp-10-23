@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://dskc2v4m6r7hi"]
+
+[ext_resource type="Script" uid="uid://dba0xv6gk7k3e" path="res://Portals stuff/Scenes/textboxui.gd" id="1_dq1me"]
+
+[node name="TextBoxUI" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_dq1me")
+
+[node name="UIRoot" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Overlay" type="ColorRect" parent="UIRoot"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.45)
+
+[node name="TextPanel" type="Panel" parent="UIRoot"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.05
+anchor_top = 0.62
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContentColumn" type="VBoxContainer" parent="UIRoot/TextPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="DialogRow" type="HBoxContainer" parent="UIRoot/TextPanel/ContentColumn"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Portrait" type="TextureRect" parent="UIRoot/TextPanel/ContentColumn/DialogRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextStack" type="VBoxContainer" parent="UIRoot/TextPanel/ContentColumn/DialogRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="SpeakerName" type="Label" parent="UIRoot/TextPanel/ContentColumn/DialogRow/TextStack"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="StoryText" type="RichTextLabel" parent="UIRoot/TextPanel/ContentColumn/DialogRow/TextStack"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_active = false
+
+[node name="ControlsRow" type="HBoxContainer" parent="UIRoot/TextPanel/ContentColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="NextHint" type="Label" parent="UIRoot/TextPanel/ContentColumn/ControlsRow"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Press Space or Click"
+
+[node name="Spacer" type="Control" parent="UIRoot/TextPanel/ContentColumn/ControlsRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NextButton" type="Button" parent="UIRoot/TextPanel/ContentColumn/ControlsRow"]
+layout_mode = 2
+text = "Next"
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="UIRoot/TextPanel/ContentColumn"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[connection signal="gui_input" from="UIRoot/Overlay" to="." method="_on_overlay_gui_input"]
+[connection signal="pressed" from="UIRoot/TextPanel/ContentColumn/ControlsRow/NextButton" to="." method="_on_next_button_pressed"]
